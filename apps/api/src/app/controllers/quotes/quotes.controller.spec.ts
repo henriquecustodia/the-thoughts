@@ -45,7 +45,7 @@ describe('AppController', () => {
   });
 
   it('should return a random quote', () => {
-    expect(controller.getRandomQuote()).toEqual(mockedQuote1); 
+    expect(controller.getRandomQuote()).toEqual(mockedQuote2);
   });
 
 });
