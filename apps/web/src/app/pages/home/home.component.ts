@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Quote } from '../../models/quote';
 import { ActivatedRoute } from '@angular/router';
+import { Thought } from "@libs/thoughts";
 
 @Component({
   selector: 'app-home',
@@ -17,14 +17,14 @@ export class HomeComponent implements OnInit {
     return 'h-full flex flex-col items-center justify-center p-4'
   }
 
-  quote!: Quote;
+  thought!: Thought;
 
   constructor(
     private activatedRoute: ActivatedRoute
   ) { }
 
   async ngOnInit() {
-    this.quote = this.activatedRoute.snapshot.data['quote'];
+    this.thought = this.activatedRoute.snapshot.data['thought'];
   }
 
 }

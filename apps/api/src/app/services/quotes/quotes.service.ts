@@ -5,14 +5,14 @@ import { Quote } from './../../models/quote.model';
 
 
 @Injectable()
-export class QuotesService {
+export class ThoughtsService {
 
   constructor(
     private dataService: DataService,
     private utilService: UtilService
   ) { }
 
-  getAllQuotes(): Quote[] {
+  getAllThoughts(): Quote[] {
     return this.dataService.getData();
   }
 

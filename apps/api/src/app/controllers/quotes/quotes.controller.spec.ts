@@ -1,14 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { QuotesController } from './quotes.controller';
-import { QuotesService } from '../../services/quotes/quotes.service';
+import { ThoughtsController } from './quotes.controller';
+import { ThoughtsService } from '../../services/quotes/quotes.service';
 import { Quote } from '../../models/quote.model';
 
 describe('AppController', () => {
   let app: TestingModule;
-  let controller: QuotesController;
-  let mockQuotesService: Partial<QuotesService>;
+  let controller: ThoughtsController;
+  let mockThoughtsService: Partial<ThoughtsService>;
   
-  let mockedQuotes: Quote[];
+  let mockedThoughts: Quote[];
   let mockedQuote1: Quote;
   let mockedQuote2: Quote;
 
@@ -16,24 +16,24 @@ describe('AppController', () => {
     mockedQuote1 = { text: 'text1', author: 'author1' };
     mockedQuote2 = { text: 'text2', author: 'author2' };
 
-    mockedQuotes = [
+    mockedThoughts = [
       mockedQuote1,
       mockedQuote2
     ]
 
-    mockQuotesService = {
-      getAllQuotes: jest.fn(() => mockedQuotes),
+    mockThoughtsService = {
+      getAllThoughts: jest.fn(() => mockedThoughts),
       getRandomQuote: jest.fn(() => mockedQuote2),
     };
 
     app = await Test.createTestingModule({
-      controllers: [QuotesController],
+      controllers: [ThoughtsController],
       providers: [
-        { provide: QuotesService, useValue: mockQuotesService }
+        { provide: ThoughtsService, useValue: mockThoughtsService }
       ],
     }).compile();
 
-    controller = app.get<QuotesController>(QuotesController);
+    controller = app.get<ThoughtsController>(ThoughtsController);
   });
 
   it('should be defined', () => {
@@ -41,7 +41,7 @@ describe('AppController', () => {
   });
 
   it('should return a quote list', () => {
-    expect(controller.getAll()).toEqual(mockedQuotes);
+    expect(controller.getAll()).toEqual(mockedThoughts);
   });
 
   it('should return a random quote', () => {
