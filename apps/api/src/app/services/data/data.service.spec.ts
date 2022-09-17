@@ -1,5 +1,5 @@
 
-const mockedQuotes: Quote[] = [
+const mockedThoughts: Quote[] = [
   {
     text: 'test1',
     author: 'test1',
@@ -11,7 +11,7 @@ const mockedQuotes: Quote[] = [
 ]
 
 jest.mock('../../data/quotes', () => ({
-  quotes: mockedQuotes
+  quotes: mockedThoughts
 }));
 
 import { Test, TestingModule } from '@nestjs/testing';
@@ -34,6 +34,6 @@ describe('DataService', () => {
   });
 
   it('should be defined', () => {
-    expect(service.getData()).toEqual(mockedQuotes);
+    expect(service.getData()).toEqual(mockedThoughts);
   });
 });

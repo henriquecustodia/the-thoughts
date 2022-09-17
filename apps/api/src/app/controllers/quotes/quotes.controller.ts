@@ -1,20 +1,20 @@
 import { Controller, Get } from '@nestjs/common';
-import { QuotesService } from '../../services/quotes/quotes.service';
+import { ThoughtsService } from '../../services/quotes/quotes.service';
 
 @Controller('quotes')
-export class QuotesController {
+export class ThoughtsController {
 
   constructor(
-    private readonly quotesService: QuotesService
+    private readonly ThoughtsService: ThoughtsService
   ) { }
 
   @Get()
   getAll() {
-    return this.quotesService.getAllQuotes();
+    return this.ThoughtsService.getAllThoughts();
   }
 
   @Get('/random')
   getRandomQuote() {
-    return this.quotesService.getRandomQuote();
+    return this.ThoughtsService.getRandomQuote();
   }
 }

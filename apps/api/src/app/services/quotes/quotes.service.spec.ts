@@ -2,10 +2,10 @@ import { Test } from '@nestjs/testing';
 import { Quote } from '../../models/quote.model';
 import { DataService } from '../data/data.service';
 import { UtilService } from '../util/util.service';
-import { QuotesService } from './quotes.service';
+import { ThoughtsService } from './quotes.service';
 
-describe('QuotesService', () => {
-  let service: QuotesService;
+describe('ThoughtsService', () => {
+  let service: ThoughtsService;
   let mockedDataService: DataService;
   let mockedUtilService: UtilService;
 
@@ -39,13 +39,13 @@ describe('QuotesService', () => {
 
     const app = await Test.createTestingModule({
       providers: [
-        QuotesService,
+        ThoughtsService,
         { provide: DataService, useValue: mockedDataService },
         { provide: UtilService, useValue: mockedUtilService }
       ],
     }).compile();
 
-    service = app.get<QuotesService>(QuotesService);
+    service = app.get<ThoughtsService>(ThoughtsService);
   });
 
   it('should be defined', () => {
@@ -53,7 +53,7 @@ describe('QuotesService', () => {
   });
 
   it('should return quote list', () => {
-    expect(service.getAllQuotes()).toEqual(mockedQuoteList);
+    expect(service.getAllThoughts()).toEqual(mockedQuoteList);
   });
 
   it('should return quote list', () => {
