@@ -4,6 +4,7 @@
   "projects": {
     "api": "apps/api",
     "the-thoughts": "libs/the-thoughts",
+    "thoughts-component": "libs/thoughts-component",
     "web": "apps/web",
     "web-e2e": "apps/web-e2e"
   }
