@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@cust/random-thought-component": ["libs/thoughts-component/src/index.ts"],
       "@libs/thoughts": ["libs/the-thoughts/src/index.ts"]
     }
   },
