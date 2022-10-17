@@ -1,6 +1,6 @@
 # The Thoughts
 
-![](website-image.png)
+![](quote.png)
 
 
 I like to read quotes from philosophers and entrepreneurs. Generally, it makes me go beyond my limitations and get motivated toward the future.
