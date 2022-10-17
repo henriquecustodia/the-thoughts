@@ -1,16 +1,16 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { ThoughtsController } from './quotes.controller';
-import { ThoughtsService } from '../../services/quotes/quotes.service';
-import { Quote } from '../../models/quote.model';
+import { ThoughtsController } from './thoughts.controller';
+import { ThoughtsService } from '../../services/quotes/thoughts.service';
+import { Thought } from '@cust/thoughts';
 
 describe('AppController', () => {
   let app: TestingModule;
   let controller: ThoughtsController;
   let mockThoughtsService: Partial<ThoughtsService>;
   
-  let mockedThoughts: Quote[];
-  let mockedQuote1: Quote;
-  let mockedQuote2: Quote;
+  let mockedThoughts: Thought[];
+  let mockedQuote1: Thought;
+  let mockedQuote2: Thought;
 
   beforeAll(async () => {
     mockedQuote1 = { text: 'text1', author: 'author1' };
@@ -23,7 +23,7 @@ describe('AppController', () => {
 
     mockThoughtsService = {
       getAllThoughts: jest.fn(() => mockedThoughts),
-      getRandomQuote: jest.fn(() => mockedQuote2),
+      getRandomThought: jest.fn(() => mockedQuote2),
     };
 
     app = await Test.createTestingModule({
@@ -45,7 +45,7 @@ describe('AppController', () => {
   });
 
   it('should return a random quote', () => {
-    expect(controller.getRandomQuote()).toEqual(mockedQuote2);
+    expect(controller.getRandomThought()).toEqual(mockedQuote2);
   });
 
 });
