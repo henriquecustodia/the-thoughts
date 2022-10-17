@@ -3,7 +3,7 @@
   "version": 2,
   "projects": {
     "api": "apps/api",
-    "the-thoughts": "libs/the-thoughts",
+    "thoughts": "libs/thoughts",
     "web": "apps/web",
     "web-e2e": "apps/web-e2e"
   }

@@ -1,5 +1,5 @@
 import { Routes } from "@angular/router";
-import { getRandomThought } from "@libs/thoughts";
+import { getRandomThought } from "@cust/thoughts";
 import { HomeComponent } from "./app/pages/home/home.component";
 
 export const routes: Routes = [

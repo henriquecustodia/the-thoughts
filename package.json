@@ -6,8 +6,8 @@
     "serve": "nx run-many --target=serve --all --parallel",
     "serve-api": "nx serve --project api",
     "serve-web": "nx serve --project web",
-    "build": "nx build",
-    "test": "nx test",
+    "build": "nx affected --target=build --all=true",
+    "test": "nx affected --target=test --all=true ",
     "postinstall": "ngcc --properties es2020 browser module main"
   },
   "private": true,
