@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, HostBinding, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { Thought } from "@libs/thoughts";
+import { Thought } from "@cust/thoughts";
+import { getResolvedRouteData } from '../../functions/get-resolved-route-data';
 
 @Component({
   selector: 'app-home',
@@ -11,20 +11,12 @@ import { Thought } from "@libs/thoughts";
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit {
-  
+export class HomeComponent {
+
   @HostBinding('class') get classAttr() {
     return 'h-full flex flex-col items-center justify-center p-4'
   }
 
-  thought!: Thought;
-
-  constructor(
-    private activatedRoute: ActivatedRoute
-  ) { }
-
-  async ngOnInit() {
-    this.thought = this.activatedRoute.snapshot.data['thought'];
-  }
+  thought = getResolvedRouteData<Thought>('thought') ;
 
 }

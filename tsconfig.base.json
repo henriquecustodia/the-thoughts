@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@libs/thoughts": ["libs/the-thoughts/src/index.ts"]
+      "@cust/thoughts": ["libs/thoughts/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
