@@ -4,6 +4,7 @@
   "projects": {
     "api": "apps/api",
     "thoughts": "libs/thoughts",
+    "twitter-bot": "apps/twitter-bot",
     "web": "apps/web",
     "web-e2e": "apps/web-e2e"
   }
